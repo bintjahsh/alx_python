@@ -5,9 +5,8 @@ def is_prime(number):
         for num in range(2, number):
             if (number % num) == 0:
                 return False
+                break
         else:
             return True
     else:
         return False
-
-print(is_prime(0))

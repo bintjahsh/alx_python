@@ -5,7 +5,11 @@ def safe_print_division(a, b):
             result = 'None'
             return result
     finally:
-        print('Inside result: {}\n{} / {} = {}'.format(result, a, b, result))
+        print('Inside result: {}'.format(result))
+        return result
 
-print(safe_print_division(2, 0))
+a = 10
+b = 2
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
 

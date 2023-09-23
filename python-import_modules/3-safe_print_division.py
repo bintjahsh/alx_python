@@ -1,11 +1,12 @@
 def safe_print_division(a, b):
     try:
         result = a / b
-    except:
+    except ZeroDivisionError:
             result = 'None'
+            return result
     finally:
-        print('Inside result: {} \n {:d} / {:d} = {}'.format(result, a, b, result))
+        return ('Inside result: {} \n{:d} / {:d} = {}'.format(result, a, b, result))
 
 
-print(safe_print_division(4, 2))
+print(safe_print_division(12, 0))
 

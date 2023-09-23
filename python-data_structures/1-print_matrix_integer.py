@@ -14,8 +14,9 @@ def print_matrix_integer(matrix=[[]]):
         #         print(k)
                 # newMatrix = '{:d} {:d} {:d}'.format(i, j, k)
     # print(newMatrix)
-    print('\n'.join([''.join(['{} '.format(item) for item in row]) 
+    newMatrix = ('\n'.join([''.join(['{} '.format(item) for item in row]) 
       for row in matrix]))
+    print('{}'.format(newMatrix))
 
 # matrix = [
 #     [],

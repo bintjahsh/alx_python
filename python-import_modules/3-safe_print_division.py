@@ -8,5 +8,5 @@ def safe_print_division(a, b):
         value = 'Inside result: {}\n{:d} / {:d} = {}'.format(result, a, b, result)
         return value
 
-print(safe_print_division(0, 2))
+#print(safe_print_division(0, 2))
 

@@ -18,6 +18,6 @@ if __name__ == "__main__":
             print('{:d} arguments.'.format(n))
         else:
             #print('{:d} arguments:\n{}'.format(n, enumerate(args)))
-            print('{:d} argument:\n{}: {}'.format(n, ((i, j) for i, j in lst_arg)))
+            print('{:d} argument:\n{}'.format(n, ((i, j) for i, j in lst_arg)))
 
 list_arg(1, 2, "Hello", "Kwara")

@@ -1,5 +1,11 @@
 def no_c(my_string):
-    list(my_string).remove('c')
-    newString = my_string
-    list(newString).remove('C')
-    my_string = newString
+    newString = [x for x in list(my_string) if x != 'c']
+    my_string = [x for x in list(newString) if x != 'C']
+    newString = "".join(my_string)
+    return newString
+
+# word = "School"
+# new_word = no_c(word)
+
+# print(new_word)
+# print(word)

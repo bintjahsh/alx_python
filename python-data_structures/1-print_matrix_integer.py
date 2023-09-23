@@ -2,8 +2,12 @@ def print_matrix_integer(matrix=[[]]):
     # print(matrix[0][0])
     # print(matrix[1])
     # print(matrix[2])
-    for [] in matrix:
-        print('{}'.format([]))
+    for i in matrix:
+        print('hey')
+        for j in matrix:
+            print("no")
+        # newMatrix = str(matrix[[i]])
+        # print('{}'.format(newMatrix))
         # for j in matrix:
         #     print(j)
         #     for k in matrix:
@@ -11,11 +15,11 @@ def print_matrix_integer(matrix=[[]]):
                 # newMatrix = '{:d} {:d} {:d}'.format(i, j, k)
     # print(newMatrix)
 
-# matrix = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-# print_matrix_integer(matrix)
-# print("--")
+print_matrix_integer(matrix)
+print("--")

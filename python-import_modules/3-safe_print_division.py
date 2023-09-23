@@ -7,6 +7,5 @@ def safe_print_division(a, b):
     finally:
         return ('Inside result: {} \n{:d} / {:d} = {}'.format(result, a, b, result))
 
-
-print(safe_print_division(12, 0))
+#print(safe_print_division(a, b))
 

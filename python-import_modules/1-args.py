@@ -10,14 +10,17 @@ if __name__ == "__main__":
         #         print('{:d} arguments:\n{:d}: {}'.format(n, 'i, j in enumerate(*sys.argv[1:])', sep='\n'))
     def list_arg(*args):
         n = len(args)
-        lst_arg = enumerate(args)
+        lst_arg = []
         if n == 1:
-            #print('{:d} argument:\n{}: {}'.format(n, ((i, j) for i, j in lst_arg)))
-            print("just wait")
+            print('{:d} argument:'.format(n))
+            for i, arg in enumerate(list(args)):
+                print(('{}: {}'.format(i, arg)))
         elif n == 0:
             print('{:d} arguments.'.format(n))
         else:
-            #print('{:d} arguments:\n{}'.format(n, enumerate(args)))
-            print('{:d} argument:\n{}'.format(n, ((i, j) for i, j in lst_arg)))
+            print('{:d} arguments:'.format(n))
+            for i, arg in enumerate(list(args)):
+                print(('{}: {}'.format(i, arg)))
 
-list_arg(1, 2, "Hello", "Kwara")
+# list_arg(1, 5, "Hello", "Kwara")
+# list_arg("hello")

@@ -4,11 +4,6 @@ def print_matrix_integer(matrix=[[]]):
         for j in i:
             rowMatrix += ('{} '. format(j))
         print(rowMatrix)
-        #rowMatrix = ""
-    # for i in matrix:
-    #     for j in matrix:
-    #         newMatrix = str(matrix[[i]][:])
-    #     print('{}'.format(newMatrix))
 
 matrix = [
     [1, 2, 3],

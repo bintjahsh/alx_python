@@ -1,15 +1,17 @@
 def best_score(a_dictionary):
-    scores = list(a_dictionary)
-    biggest = [i for i, j in a_dictionary.items() if j == max(scores)]
-    # for i, j in a_dictionary.items:
-    #     if j == None:
-    #         return None
-    #     else:
-    #         biggest = 
+    scores = []
+    for i, j in a_dictionary.items():
+        scores.append(j)
+        if j == None:
+            return None
+    biggest = max(scores)
+    for i, j in a_dictionary.items():
+        if j == biggest:
+            return i
     # biggest = max(scores)
-    return biggest
+    # return biggest
 
-# a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
+# a_dictionary = {'John': None, 'Bob': None, 'Mike': None, 'Molly': None, 'Adam': None}
 # best_key = best_score(a_dictionary)
 # print("Best score: {}".format(best_key))
 

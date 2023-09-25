@@ -3,6 +3,7 @@ def update_dictionary(a_dictionary, key: str, value: any):
         a_dictionary[key] = value
     else:
         a_dictionary[key] = value
+    return a_dictionary
     
 
 # def print_sorted_dictionary(my_dict):

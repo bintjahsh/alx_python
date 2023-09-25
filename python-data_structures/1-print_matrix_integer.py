@@ -3,8 +3,8 @@ def print_matrix_integer(matrix=[[]]):
         rowMatrix = ""
         for j in i:
             rowMatrix += ('{:d}'.format(j))
-            rowMatrix += ' '
-            # if j != i[-1]:        
+            if j != i[-1]:
+                rowMatrix += ' '      
         print(rowMatrix)
         # print(len(rowMatrix))
 

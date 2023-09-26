@@ -1,17 +1,18 @@
 def best_score(a_dictionary):
-    scores = []
-    for i, j in a_dictionary.items():
-        scores.append(j)
-        if j == None:
-            return None
-    biggest = max(scores)
-    for i, j in a_dictionary.items():
-        if j == biggest:
-            return i
+    if a_dictionary == None:
+        return None
+    else:
+        scores = []
+        for i, j in a_dictionary.items():
+            scores.append(j)
+            biggest = max(scores)
+        for i, j in a_dictionary.items():
+            if j == biggest:
+                return i
     # biggest = max(scores)
     # return biggest
 
-# a_dictionary = {'John': None, 'Bob': None, 'Mike': None, 'Molly': None, 'Adam': None}
+# a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
 # best_key = best_score(a_dictionary)
 # print("Best score: {}".format(best_key))
 

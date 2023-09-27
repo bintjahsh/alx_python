@@ -1,3 +1,6 @@
+""" This module contains the creation and initialization of a class
+called 'Square'
+"""
 class Square:
     """Creation of class Square which will contain different attributes
     of a square in a private and protected capacity

@@ -1,4 +1,4 @@
-""" This module contains the creation and initialization of a class
+"""This module contains the creation and initialization of a class
 called 'Square'. Square will have the properties: size and area
 - derived from size
 """
@@ -38,6 +38,7 @@ class Square:
                 raise ValueError('size must be >= 0')
 
     def area(self):
-            """Return the current square area
+            """Return the current square area which is
+            derived from its size
             """
             return self.square_area

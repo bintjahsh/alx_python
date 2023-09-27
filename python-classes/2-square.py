@@ -10,6 +10,7 @@ class Square:
         as the size of every square is unique and consequential
         """
         self.__size = size
+        self.square_area = size**2
         
         """Size must be an integer, otherwise raise
         a TypeError
@@ -26,7 +27,7 @@ class Square:
     def area(self):
         """Return the current square area
         """
-        return self**2
+        return self.square_area
 
     
     

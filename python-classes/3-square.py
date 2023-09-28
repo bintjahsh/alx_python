@@ -10,21 +10,18 @@ class Square:
         """initializing Square with a private instance attribute 'size'
         as the size of every square is unique and consequential
         """
-        self.__size = size
+        self.size = size
         self.square_area = size**2
 
+    @property
     def size(self):
         """Retrieve the size of the square as a
         public attribute
         """
         return self.__size
 
+    @size.setter
     def size(self, value):
-        """Set square property 'size' to the value
-        of 'value'
-        """
-        self.size = value
-        
         """Size must be an integer, otherwise raise
         a TypeError
         """
@@ -36,11 +33,20 @@ class Square:
             """
             raise ValueError('size must be >= 0')
         else:
-            return value
-
-
+            """Set square property 'size' to the value
+            of 'value'
+            """
+            self.__size = value
 
     def area(self):
             """Return the current square area
             """
             return self.square_area
+
+
+# my_square = Square(89)
+# print(my_square.size)
+# print(my_square.area())
+# my_square.size = 33
+# print(my_square.size)
+# print(my_square.area())

@@ -62,9 +62,9 @@ class Square:
                     rowMatrix += ('{:s}'.format(j))      
                 print(rowMatrix)    
 
-            print(len(myShape))
+            # print(len(myShape))
 
-            print(len(myShape_matrix))
+            # print(len(myShape_matrix))
             
 
 # my_square = Square(3)

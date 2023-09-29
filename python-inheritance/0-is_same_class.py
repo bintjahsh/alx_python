@@ -1,6 +1,9 @@
+""" A module that checks if an object is 
+an instance of a specific class
+"""
 def is_same_class(obj, a_class):
-    """ To check if an object is an instance of 
-    a specific class
+    """ Returns true if obj is an instance of a_class
+    and false otherwise
     """
     if isinstance(obj, a_class):
         return True

@@ -7,14 +7,13 @@ def inherits_from(obj, a_class):
     of the subclasses of a_class and false otherwise
     """
     # return issubclass(type(obj), type(a_class).__bases__)
-    if type(obj) in a_class.__subclasses__():
+    if (type(obj) in a_class.__subclasses__()) | isinstance(obj, a_class):
         return True
     else:
         return False
 
 # a = True
 # print(inherits_from(a, int))
-# b = [1, 2, 3]
-# print(inherits_from(b, list))
-# c = True
-# print(inherits_from(c, int))
+# a = True
+# print(inherits_from(a, object))
+# print(isinstance(True, object))

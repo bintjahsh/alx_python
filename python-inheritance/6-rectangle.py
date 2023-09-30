@@ -11,11 +11,11 @@ class Rectangle(BaseGeometry):
         """ Instantiation with private instance properties
         width and height
         """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
-        width.integer_validator()
-        height.integer_validator()
 
 # r = Rectangle(3, 5)
 

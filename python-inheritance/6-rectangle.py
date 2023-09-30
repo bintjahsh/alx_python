@@ -1,11 +1,16 @@
-BaseGeometry = import('5-base_geometry').BaseGeometry
-""" Creates a class Rectangle
+""" Imports base class BaseGeometry
 """
+BaseGeometry = import('5-base_geometry').BaseGeometry
+
+""" Creates a class Rectangle that inherits the attributes of 
+base class BaseGeometry
+"""
+
 class Rectangle(BaseGeometry):
     """ A class rectangle that inherits from BaseGeometry
     """
     def __init__(self, width, height):
-        """ Instantistion with private instance properties
+        """ Instantiation with private instance properties
         width and height
         """
         self.__width = width

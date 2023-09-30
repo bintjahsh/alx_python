@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module is about a class Rectangle that
 inherits the attributes of base class BaseGeometry
 """

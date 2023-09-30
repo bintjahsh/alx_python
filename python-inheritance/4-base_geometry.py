@@ -3,12 +3,12 @@
 class BaseGeometry:
     """ Initializes the class BaseGeometry
     """
-    def _dir_(cls):
+    # def _dir_(cls):
 
-        """This is to exclude the init_subclass attribute 
-        from printing
-        """
-        return [attribute for attribute in super()._dir() if attribute != '__init_subclass_']
+    #     """This is to exclude the init_subclass attribute 
+    #     from printing
+    #     """
+    #     return [attribute for attribute in super()._dir() if attribute != '__init_subclass_']
 
 
     def area(self):

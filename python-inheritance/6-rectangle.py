@@ -1,7 +1,6 @@
+BaseGeometry = import('5-base_geometry').BaseGeometry
 """ Creates a class Rectangle
 """
-BaseGeometry = import('5-base_geometry').BaseGeometry
-
 class Rectangle(BaseGeometry):
     """ A class rectangle that inherits from BaseGeometry
     """

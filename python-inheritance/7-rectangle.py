@@ -17,10 +17,10 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
 
-    def __str__(self, width, height):
+    def __str__(self):
         """ A function that overrides __str__ to specify
         how strings are rendered for class Rectangle"""
-        return ('[Rectangle] {:d}/{:d}'.format(width, height))
+        return ('[Rectangle] {:d}/{:d}'.format(self.__width, self.__height))
 
     def area(self):
         """ A function that calculates and returns the area of

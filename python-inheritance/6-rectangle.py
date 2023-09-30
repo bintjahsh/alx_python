@@ -1,9 +1,9 @@
 """ Shape: this module is about a class Rectangle.
-
 It inherits the attributes of base class BaseGeometry.
 """
 
-# BaseGeometry = import('5-base_geometry').BaseGeometry
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
+
 class Rectangle(BaseGeometry):
     """ A class rectangle that inherits from BaseGeometry
     """

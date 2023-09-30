@@ -1,5 +1,5 @@
-"""Creates a class Rectangle that inherits the attributes of 
-base class BaseGeometry
+"""This module is about a class Rectangle that
+inherits the attributes of base class BaseGeometry
 """
 BaseGeometry = import('5-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):

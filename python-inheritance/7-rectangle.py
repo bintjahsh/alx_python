@@ -22,8 +22,8 @@ class Rectangle(BaseGeometry):
         how strings are rendered for class Rectangle"""
         return ('[Rectangle] {:d}/{:d}'.format(width, height))
 
-    def area(self, width, height):
+    def area(self):
         """ A function that calculates and returns the area of
          the Rectangle"""
-        area = width * height
+        area = self.__width * self.__height
         return area

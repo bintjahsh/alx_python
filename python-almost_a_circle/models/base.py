@@ -9,11 +9,12 @@ class Base:
     """
     def __init__(self, id=None):
         """ Initializes the class Base with a keyword argument
-        id. If a value is given for id assign it to id, otherwise
-        increment __nb_objects and assign its value to id
+        id. Set default value of __nb_objects to 0. 
         """
         __nb_objects = 0
-        """ set default value of __nb_objects to 0
+        
+        """If a value is given for id assign it to id, otherwise
+        increment __nb_objects and assign its value to id
         """
         if id != None:
             self.id = id
@@ -21,10 +22,10 @@ class Base:
             __nb_objects += 1
             self.id = __nb_objects
 
-b = Base()
-if b is None:
-    print("Can't create Base")
-    exit(1)
+# b = Base()
+# if b is None:
+#     print("Can't create Base")
+#     exit(1)
 
-print("OK", end="")
+# print("OK", end="")
         

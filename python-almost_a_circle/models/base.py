@@ -12,19 +12,37 @@ class Base:
         id. Set default value of __nb_objects to 0. 
         """
         __nb_objects = 0
-        
+
         """If a value is given for id assign it to id, otherwise
         increment __nb_objects and assign its value to id
         """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             __nb_objects += 1
             self.id = __nb_objects
+            
+        
 
 # b = Base()
 # if b is None:
 #     print("Can't create Base")
+#     exit(1)
+
+# if b.id != 1:
+#     print("ID is not equal to 1: {}".format(b.id))
+#     exit(1)
+    
+# for i in range(2):
+#     btmp = Base()
+
+# btest = Base()
+# if btest is None:
+#     print("Can't create Base")
+#     exit(1)
+
+# if btest.id != 4:
+#     print("ID is not equal to 4 after 3 other creations: {}".format(btest.id))
 #     exit(1)
 
 # print("OK", end="")

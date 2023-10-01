@@ -1,6 +1,6 @@
 """ A class Rectangle that inherits from Base 
 """
-from base import Base
+from models.base import Base
 
 class Rectangle(Base):
     """ A class Rectangle that inherits from super class Base

@@ -164,6 +164,45 @@ class Rectangle(Base):
         how strings are rendered for class Rectangle"""
         return ('[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.id, self.__x, self.__y, self.__width, self.__height))
 
+    def update(self, *args):
+        """Defines public method update that assigns an
+        argument to each attribute in a positional order
+        """
+        if len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.id = args[0]
+            self.width = args[1]
+        elif len(args) == 3:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+        elif len(args) == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        elif len(args) == 5:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
 
-# r = Rectangle(10, 12, 5, 3)
-# r.display()
+# r1 = Rectangle(10, 10, 10, 10)
+# print(r1)
+
+# r1.update(89)
+# print(r1)
+
+# r1.update(89, 2)
+# print(r1)
+
+# r1.update(89, 2, 3)
+# print(r1)
+
+# r1.update(89, 2, 3, 4)
+# print(r1)
+
+# r1.update(89, 2, 3, 4, 5)
+# print(r1)

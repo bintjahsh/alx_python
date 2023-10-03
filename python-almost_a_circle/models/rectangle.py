@@ -144,11 +144,18 @@ class Rectangle(Base):
         for j in range(self.__height):
             rectangle_shape.append(rectangle_row)
 
+        for y in range(self.__y):
+            print("")
+        
+        space_x = ""
+        for x in range(self.__x):
+            space_x += " "
+
         for i in rectangle_shape:
             myShape = ""
             for j in i:
                 myShape += ('{:s}'.format(j))      
-            print(myShape)
+            print(space_x, myShape)
 
     def __str__(self):
         """ A function that overrides __str__ to specify
@@ -156,10 +163,10 @@ class Rectangle(Base):
         return ('[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.id, self.__x, self.__y, self.__width, self.__height))
 
 
-# r1 = Rectangle(4, 6)
+# r1 = Rectangle(2, 3, 2, 2)
 # r1.display()
 
 # print("---")
 
-# r1 = Rectangle(2, 2)
-# r1.display()
+# r2 = Rectangle(3, 2, 1, 0)
+# r2.display()

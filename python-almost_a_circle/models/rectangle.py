@@ -9,43 +9,43 @@ class Rectangle(Base):
     """ Set default value of private attribute __nb_objects to 0.
     """
 
-    def __init__(self, width=0, height=0, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """ Initialize Rectangle with private instance attributes
         width, height, x and y
         """
         super().__init__(id)
 
         """ Validate and instantiate width with condition:
-                ~ must be > 0
+        ~ must be an integer
         """
-        if width <= 0:
-            raise ValueError('width must be > 0')
+        if type(width) != int:
+            raise TypeError('width must be an integer')
         else:
             self.__width = width
         
         """ Validate and instantiate height with condition:
-                ~ must be > 0
+                ~ must be an integer
         """
-        if height <= 0:
-            raise ValueError('height must be > 0')
+        if type(height) != int:
+            raise TypeError('height must be an integer')
         else:
             self.__height = height
 
 
         """ Validate and instantiate x with condition:
-                ~ must be >= 0
+                ~ must be an integer
         """
-        if x < 0:
-            raise ValueError('x must be >= 0')
+        if type(x) != int:
+            raise TypeError('x must be an integer')
         else:
             self.__x = x
         
         
         """ Validate and instantiate y with condition:
-                ~ must be >= 0
+                ~ must be an integer
         """
-        if y < 0:
-            raise ValueError('y must be >= 0')
+        if type(y) != int:
+            raise TypeError('y must be an integer')
         else:
             self.__y = y
         
@@ -118,4 +118,3 @@ class Rectangle(Base):
             raise ValueError('y must be >= 0')
         else:
             self.__y = y
-

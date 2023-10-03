@@ -150,6 +150,11 @@ class Rectangle(Base):
                 myShape += ('{:s}'.format(j))      
             print(myShape)
 
+    def __str__(self):
+        """ A function that overrides __str__ to specify
+        how strings are rendered for class Rectangle"""
+        return ('[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.id, self.__x, self.__y, self.__width, self.__height))
+
 
 # r1 = Rectangle(4, 6)
 # r1.display()

@@ -133,3 +133,28 @@ class Rectangle(Base):
         """
         area = self.__width * self.__height
         return area
+
+    def display(self):
+        """ public method display that prints in stdout the
+        Rectangle instance with the character #
+        """
+        rectangle_row = []
+        rectangle_shape = []
+        rectangle_row.extend('#' * self.__width)
+        for j in range(self.__height):
+            rectangle_shape.append(rectangle_row)
+
+        for i in rectangle_shape:
+            myShape = ""
+            for j in i:
+                myShape += ('{:s}'.format(j))      
+            print(myShape)
+
+
+# r1 = Rectangle(4, 6)
+# r1.display()
+
+# print("---")
+
+# r1 = Rectangle(2, 2)
+# r1.display()

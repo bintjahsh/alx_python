@@ -14,10 +14,53 @@ class Rectangle(Base):
         width, height, x and y
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+
+        """ Validate and instantiate width with conditions:
+                ~ must be an integer
+                ~ must be > 0
+        """
+        if type(width) != int:
+            raise TypeError('width must be an integer')
+        elif width <= 0:
+            raise ValueError('width must be > 0')
+        else:
+            self.__width = width
+        
+        """ Validate and instantiate height with conditions:
+                ~ must be an integer
+                ~ must be > 0
+        """
+        if type(height) != int:
+            raise TypeError('height must be an integer')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
+        else:
+            self.__height = height
+
+
+        """ Validate and instantiate x with conditions:
+                ~ must be an integer
+                ~ must be >= 0
+        """
+        if type(x) != int:
+            raise TypeError('x must be an integer')
+        elif x < 0:
+            raise ValueError('x must be >= 0')
+        else:
+            self.__x = x
+        
+        
+        """ Validate and instantiate y with conditions:
+                ~ must be an integer
+                ~ must be >= 0
+        """
+        if type(y) != int:
+            raise TypeError('y must be an integer')
+        elif y < 0:
+            raise ValueError('y must be >= 0')
+        else:
+            self.__y = y
+        
     
     @property
     def width(self):
@@ -29,12 +72,7 @@ class Rectangle(Base):
     def width(self, width):
         """ Defines setter for public attribute width
         """
-        if type(width) != int:
-            raise TypeError('width must be an integer')
-        elif width <= 0:
-            raise ValueError('width must be > 0')
-        else:
-            self.__width = width
+        self.__width = width
 
 
     @property
@@ -45,16 +83,9 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        """ Defines setter for public attribute height with conditions:
-                ~ must be an integer
-                ~ must be > 0
+        """ Defines setter for public attribute height
         """
-        if type(height) != int:
-            raise TypeError('height must be an integer')
-        elif height <= 0:
-            raise ValueError('height must be > 0')
-        else:
-            self.__height = height
+        self.__height = height
     
     @property
     def x(self):
@@ -66,12 +97,7 @@ class Rectangle(Base):
     def x(self, x):
         """ Defines public setter for attribute x
         """
-        if type(x) != int:
-            raise TypeError('x must be an integer')
-        elif x < 0:
-            raise ValueError('x must be >= 0')
-        else:
-            self.__x = x
+        self.__x = x
 
     @property
     def y(self):
@@ -83,9 +109,18 @@ class Rectangle(Base):
     def y(self, y):
         """ Defines public setter for attribute y
         """
-        if type(y) != int:
-            raise TypeError('y must be an integer')
-        elif y < 0:
-            raise ValueError('y must be >= 0')
-        else:
-            self.__y = y
+        self.__y = y
+
+# try:
+#     Rectangle({ 'id': 12 }, 13)
+#     print("TypeError exception not raised")
+#     exit(1)
+# except TypeError as e:
+#     if str(e) != "width must be an integer":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# print("OK", end="")

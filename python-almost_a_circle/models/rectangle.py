@@ -19,17 +19,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
     
-        # if id != None:
-        #     """If a value is given for id assign it to id, otherwise
-        #     increment __nb_objects and assign its value to id
-        #     """
-        #     self.id = id
-        #     Rectangle.__nb_objects += id
-        # else:
-        #     Rectangle.__nb_objects += 1
-        
-        #     self.id = Rectangle.__nb_objects
-    
     @property
     def width(self):
         """ Defines public getter for attribute width
@@ -38,9 +27,15 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        """ Defines public setter for attribute width
+        """ Defines setter for public attribute width
         """
-        self.__width = width
+        if type(width) != int:
+            raise TypeError('width must be an integer')
+        elif width <= 0:
+            raise ValueError('width must be > 0')
+        else:
+            self.__width = width
+
 
     @property
     def height(self):
@@ -50,9 +45,16 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        """ Defines setter for public attribute height
+        """ Defines setter for public attribute height with conditions:
+                ~ must be an integer
+                ~ must be > 0
         """
-        self.__height = height
+        if type(height) != int:
+            raise TypeError('height must be an integer')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
+        else:
+            self.__height = height
     
     @property
     def x(self):
@@ -64,7 +66,12 @@ class Rectangle(Base):
     def x(self, x):
         """ Defines public setter for attribute x
         """
-        self.__x = x
+        if type(x) != int:
+            raise TypeError('x must be an integer')
+        elif x < 0:
+            raise ValueError('x must be >= 0')
+        else:
+            self.__x = x
 
     @property
     def y(self):
@@ -76,30 +83,9 @@ class Rectangle(Base):
     def y(self, y):
         """ Defines public setter for attribute y
         """
-        self.__y = y
-
-
-# r = Rectangle(12, 14, 4, 5, 10)
-# if r is None:
-#     print("Can't create Rectangle")
-#     exit(1)
-
-# if r._Rectangle__height != 14:
-#     print("Wrong private height: {}".format(r._Rectangle__height))
-#     exit(1)
-
-# if r.height != 14:
-#     print("Wrong height getter: {}".format(r.height))
-#     exit(1)
-
-# r.height = 7
-
-# if r._Rectangle__height != 7:
-#     print("Wrong private height: {}".format(r._Rectangle__height))
-#     exit(1)
-
-# if r.height != 7:
-#     print("Wrong height getter: {}".format(r._Rectangle__height))
-#     exit(1)
-
-# print("OK", end="")
+        if type(y) != int:
+            raise TypeError('y must be an integer')
+        elif y < 0:
+            raise ValueError('y must be >= 0')
+        else:
+            self.__y = y

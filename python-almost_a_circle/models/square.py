@@ -52,14 +52,8 @@ class Square(Rectangle):
         else:
             self.__y = y
 
-    @property
-    def size(self):
-        """ Defines public getter for attribute size
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, size):
+    @Rectangle.width.setter
+    def width(self, size):
         """ Defines setter for public attribute size
         """
         if type(size) != int:
@@ -67,8 +61,18 @@ class Square(Rectangle):
         elif size <= 0:
             raise ValueError('width must be > 0')
         else:
-            Rectangle.__width = size
-            Rectangle.__height = size
+            self.__width = size
+
+    @Rectangle.height.setter
+    def height(self, size):
+        """ Defines setter for public attribute size
+        """
+        if type(size) != int:
+            raise TypeError('width must be an integer')
+        elif size <= 0:
+            raise ValueError('width must be > 0')
+        else:
+            self.__height = size
 
 
     

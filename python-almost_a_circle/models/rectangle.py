@@ -205,22 +205,22 @@ class Rectangle(Base):
             if 'y' in kwargs:
                 self.y = kwargs['y']
 
-s1 = Rectangle(5, 5)
-print(s1)
-print(s1.area())
-s1.display()
+# s1 = Rectangle(5, 5)
+# print(s1)
+# print(s1.area())
+# s1.display()
 
-print("---")
+# print("---")
 
-s2 = Rectangle(2, 2, 2)
-print(s2)
-print(s2.area())
-s2.display()
+# s2 = Rectangle(2, 2, 2)
+# print(s2)
+# print(s2.area())
+# s2.display()
 
-print("---")
+# print("---")
 
-s3 = Rectangle(3, 3, 1, 3)
-print(s3)
-print(s3.area())
-s3.display()
+# s3 = Rectangle(3, 3, 1, 3)
+# print(s3)
+# print(s3.area())
+# s3.display()
                 

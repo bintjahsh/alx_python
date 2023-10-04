@@ -52,6 +52,22 @@ class Square(Rectangle):
         else:
             self.__y = y
 
+    @property
+    def size(self):
+        """ Defines public getter for attribute size
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        """ Defines setter for public attribute size
+        """
+        if type(size) != int:
+            raise TypeError('width must be an integer')
+        elif size <= 0:
+            raise ValueError('width must be > 0')
+        else:
+            self.__size = size
     
     def area(self):
         """ Public method area that returns the  area

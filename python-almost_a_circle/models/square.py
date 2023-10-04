@@ -9,8 +9,7 @@ class Square(Rectangle):
         """ Initialize Rectangle with private instance attributes
         width, height, x and y
         """
-        self.__id = id
-        super().__init__(size, size, x=0, y=0, id=None)
+        super().__init__(size, size, x, y, id)
         
 
         
@@ -73,21 +72,110 @@ class Square(Rectangle):
         """
         super().update()
 
-# s1 = Square(5)
-# print(s1)
-# print(s1.area())
-# s1.display()
+# s = Square(5, 7)
+# if s.id != 1:
+#     print("ID must be equal to 1: {}".format(s.id))
+#     exit(1)
 
-# print("---")
+# if s.width != 5:
+#     print("Width of the Square must be 5: {}".format(s.width))
+#     exit(1)
 
-# s2 = Square(2, 2)
-# print(s2)
-# print(s2.area())
-# s2.display()
+# if s.height != 5:
+#     print("Height of the Square must be 5: {}".format(s.height))
+#     exit(1)
 
-# print("---")
+# if s.x != 7:
+#     print("X of the Square must be 7: {}".format(s.x))
+#     exit(1)
 
-# s3 = Square(3, 1, 3)
-# print(s3)
-# print(s3.area())
-# s3.display()
+# try:
+#     Square(5, "12")
+#     print("TypeError exception not raised")
+#     exit(1)
+# except TypeError as e:
+#     if str(e) != "x must be an integer":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, [13])
+#     print("TypeError exception not raised")
+#     exit(1)
+# except TypeError as e:
+#     if str(e) != "x must be an integer":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, 13.12)
+#     print("TypeError exception not raised")
+#     exit(1)
+# except TypeError as e:
+#     if str(e) != "x must be an integer":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, { 'id': 12 })
+#     print("TypeError exception not raised")
+#     exit(1)
+# except TypeError as e:
+#     if str(e) != "x must be an integer":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, -12)
+#     print("ValueError exception not raised")
+#     exit(1)
+# except ValueError as e:
+#     if str(e) != "x must be >= 0":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, -89)
+#     print("ValueError exception not raised")
+#     exit(1)
+# except ValueError as e:
+#     if str(e) != "x must be >= 0":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, -1)
+#     print("ValueError exception not raised")
+#     exit(1)
+# except ValueError as e:
+#     if str(e) != "x must be >= 0":
+#         print("Wrong exception message: {}".format(e))
+#         exit(1)
+# except Exception as e:
+#     print("Wrong exception: [{}] {}".format(type(e), e))
+#     exit(1)
+
+# try:
+#     Square(5, 0)
+#     print("OK", end="")
+# except Exception as e:
+#     print("0 is valid for x: [{}] {}".format(type(e), e))
+#     exit(1)

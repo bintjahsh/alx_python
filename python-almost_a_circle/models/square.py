@@ -25,8 +25,8 @@ class Square(Rectangle):
         elif size <= 0:
             raise ValueError('size must be > 0')
         else:
-            self.__size = size
-            self.__size = size
+            self.width = size
+            self.height = size
 
         
         if type(x) != int:
@@ -41,7 +41,6 @@ class Square(Rectangle):
             self.__x = x
         
         
-        
         if type(y) != int:
             """ Validate and instantiate y with condition:
                 ~ must be an integer
@@ -52,28 +51,20 @@ class Square(Rectangle):
         else:
             self.__y = y
 
+
     @Rectangle.width.setter
-    def width(self, size):
+    def size(self, size):
         """ Defines setter for public attribute size
         """
         if type(size) != int:
-            raise TypeError('width must be an integer')
+            raise TypeError('size must be an integer')
         elif size <= 0:
-            raise ValueError('width must be > 0')
+            raise ValueError('size must be > 0')
         else:
-            self.__width = size
+            self.width = size
+            self.height = size
 
-    @Rectangle.height.setter
-    def height(self, size):
-        """ Defines setter for public attribute size
-        """
-        if type(size) != int:
-            raise TypeError('width must be an integer')
-        elif size <= 0:
-            raise ValueError('width must be > 0')
-        else:
-            self.__height = size
-
+            
 
     
     def area(self):
@@ -101,5 +92,27 @@ class Square(Rectangle):
         argument to each attribute in a positional order
         """
         super().update()
+
+# s = Square(12)
+# if s is None:
+#     print("Can't create Square")
+#     exit(1)
+
+# for attribute in list(s.__dict__.keys()):
+#     if "size" in attribute:
+#         print("You are not allowed to add any new attribute for size: {}".format(attribute))
+#         exit(1)
+
+# if s.size != 12:
+#     print("Wrong size getter: {}".format(s.size))
+#     exit(1)
+
+# s.size = 5
+
+# if s.size != 5:
+#     print("Wrong size getter: {}".format(s.size))
+#     exit(1)
+
+# print("OK", end="")
 
        

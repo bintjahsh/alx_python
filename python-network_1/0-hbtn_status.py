@@ -8,5 +8,5 @@ if __name__ == "__main__":
     type = str(type(r.reason))
     reason = r.reason
     print('''Body response:
-- type: {}
-- content: {:s}'''.format(type, reason))
+    - type: {}
+    - content: {:s}'''.format(type, reason))

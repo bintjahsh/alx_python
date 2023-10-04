@@ -10,7 +10,10 @@ class Square(Rectangle):
         width, height, x and y
         """
         self.id = id
+        
         super().__init__(size, size, x, y, id)
+        self.x = x
+        self.y = y
         
 
         if type(size) != int:
@@ -59,9 +62,10 @@ class Square(Rectangle):
 
     def display(self):
         """ public method display that prints in stdout the
-        Rectangle instance with the character #
+        Square instance with the character #
         """
-        return super().display()
+        super().display()
+
 
     def __str__(self):
         """ A function that overrides __str__ to specify
@@ -75,4 +79,4 @@ class Square(Rectangle):
         """
         super().update()
 
-        
+       

@@ -141,19 +141,20 @@ class Rectangle(Base):
         for j in range(self.__height):
             rectangle_shape.append(rectangle_row)
 
-        if self.__x != 0:
+        if self.__y != 0:
             for y in range(self.__y):
                 print("")
 
         space_x = ""
-        for x in range(self.__x):
-            space_x += " "
+        if self.__x != 0:
+            for x in range(self.__x):
+                space_x += " "
 
         for i in rectangle_shape:
             myShape = ""
             for j in i:
                 myShape += ('{:s}'.format(j))
-            print(space_x, myShape)     
+            print(space_x + myShape)    
             # print(('{:>{}}'.format(myShape, self.__x)))
 
     def __str__(self):

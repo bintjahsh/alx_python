@@ -205,6 +205,3 @@ class Rectangle(Base):
             
             if 'y' in kwargs:
                 self.y = kwargs['y']
-
-
-                

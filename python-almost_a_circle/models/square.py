@@ -63,9 +63,6 @@ class Square(Rectangle):
         else:
             self.width = size
             self.height = size
-
-            
-
     
     def area(self):
         """ Public method area that returns the  area
@@ -85,34 +82,10 @@ class Square(Rectangle):
         """ A function that overrides __str__ to specify
         how strings are rendered for class Square"""
         super().__str__()
-        return ('[Square] ({}) {:d}/{:d} - {:d}'.format(self.id, self.__x, self.__y, self.__size))
+        return ('[Square] ({}) {:d}/{:d} - {:d}'.format(self.id, self.__x, self.__y, self.size))
 
     def update(self, *args, **kwargs):
         """Defines public method update that assigns an
         argument to each attribute in a positional order
         """
         super().update()
-
-# s = Square(12)
-# if s is None:
-#     print("Can't create Square")
-#     exit(1)
-
-# for attribute in list(s.__dict__.keys()):
-#     if "size" in attribute:
-#         print("You are not allowed to add any new attribute for size: {}".format(attribute))
-#         exit(1)
-
-# if s.size != 12:
-#     print("Wrong size getter: {}".format(s.size))
-#     exit(1)
-
-# s.size = 5
-
-# if s.size != 5:
-#     print("Wrong size getter: {}".format(s.size))
-#     exit(1)
-
-# print("OK", end="")
-
-       

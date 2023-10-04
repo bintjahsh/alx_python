@@ -5,9 +5,6 @@ from models.base import Base
 class Rectangle(Base):
     """ A class Rectangle that inherits from super class Base
     """
-    # __nb_objects = 0
-    """ Set default value of private attribute __nb_objects to 0.
-    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Initialize Rectangle with private instance attributes
@@ -16,7 +13,7 @@ class Rectangle(Base):
         super().__init__(id)
 
         """ Validate and instantiate width with condition:
-        ~ must be an integer
+            ~ must be an integer
         """
         if type(width) != int:
             raise TypeError('width must be an integer')

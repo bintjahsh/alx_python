@@ -5,5 +5,8 @@ import requests
 
 if __name__ == "__main__":
     r = requests.get('https://alu-intranet.hbtn.io/status')
-    print(r)
+    print('''Body response: 
+                - type: {:str}
+                - content: {:s}
+        '''.format(r.content-type, r.reason))
 

@@ -11,4 +11,4 @@ if __name__ == "__main__":
         the response header
         """
         r = requests.get(url)
-        return r.headers.get('X-Request-Id')
+        print('{:s}'.format(r.headers.get('X-Request-Id')))

@@ -6,7 +6,7 @@ import requests
 
 if __name__ == "__main__":
         url = sys.argv[1]
-        email = sys.argv[-1]
-        r = requests.post(url, params=email)
+        email = sys.argv[2]
+        r = requests.post(url, data=email)
         print(r.text)
 

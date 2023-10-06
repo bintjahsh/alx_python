@@ -10,7 +10,7 @@ if __name__ == "__main__":
         displays the value of the variable X-Request-Id in
         the response header
         """
-        url = sys.argv[:]
+        url = sys.argv[1:-1]
         headers = {'X-Request-Id': 'None'}
         r = requests.get(url, headers=headers)
         return r.headers

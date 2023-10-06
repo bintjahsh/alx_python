@@ -11,6 +11,6 @@ if __name__ == "__main__":
         the response header
         """
         url = argv
-        payload = {'X-Request-Id': 'None'}
-        r = requests.get(url, headers=payload)
+        headers = {'X-Request-Id': 'None'}
+        r = requests.get(url, headers=headers)
         return r

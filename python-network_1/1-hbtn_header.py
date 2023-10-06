@@ -5,12 +5,12 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    def get_value():
+    def get_value(argv):
         """  takes in a URL, sends a request to the URL and 
         displays the value of the variable X-Request-Id in
         the response header
         """
-        url = sys.argv
+        url = argv
         payload = {'X-Request-Id': 'None'}
         r = requests.get(url, headers=payload)
         return r

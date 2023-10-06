@@ -7,6 +7,6 @@ if __name__ == "__main__":
     r = requests.get('https://alu-intranet.hbtn.io/status')
     text = type(r.text)
     contents = r.text
-    res = ('''Body response:\n\t- type: {}\n\t- content: {} '''.format(text, contents))
+    res = ('''Body response:\n\t- type: {}\n\t- content: {}'''.format(text, contents))
     print(res)
     # print(len(res))

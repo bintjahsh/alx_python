@@ -14,7 +14,7 @@ if __name__ == "__main__":
             q = sys.argv
 
         r = requests.post(url, {'q': q})
-        res = r.json()
+        # res = r.json()
         
         
         if res == None:
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         elif type(res) != dict:
             print('Not a valid JSON')
         else:
-            print('[{}] {}'.format(res['id'], res['name']))
+            print('[{}] {}'.format(r.items['id'], r.items['name']))
             
 
         

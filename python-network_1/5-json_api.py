@@ -22,7 +22,7 @@ if __name__ == "__main__":
         elif type(res) != dict:
             print('Not a valid JSON')
         else:
-            print('[{}] {}'.format(res.get('id'), res.get('name')))
+            print('[{}] {}'.format(res['id'], res['name']))
             
 
         

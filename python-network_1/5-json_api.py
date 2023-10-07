@@ -19,7 +19,7 @@ if __name__ == "__main__":
         
         if r == None:
             print('No result') 
-        elif type(r) != type(r.json()):
+        elif type(r.text) != {}:
             print('Not a valid JSON')
         else:
             print('[{}] {}'.format(r.items['id'], r.items['name']))

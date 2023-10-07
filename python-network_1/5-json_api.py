@@ -17,9 +17,9 @@ if __name__ == "__main__":
         # res = r.json()
         
         
-        if res == None:
+        if r == None:
             print('No result') 
-        elif type(res) != dict:
+        elif type(r) != dict:
             print('Not a valid JSON')
         else:
             print('[{}] {}'.format(r.items['id'], r.items['name']))

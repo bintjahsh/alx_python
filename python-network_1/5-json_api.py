@@ -13,7 +13,7 @@ if __name__ == "__main__":
         else:
             q = sys.argv
 
-        r = requests.get(url)
+        r = requests.post(url, {'q': q})
 
         try:
             res = r.json()

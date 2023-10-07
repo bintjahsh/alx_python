@@ -15,9 +15,9 @@ if __name__ == "__main__":
 
         r = requests.post(url, {'q': q})
         
-        if len(r.text) != 0 & type(r.text) == dict:
+        if r.text != {} & type(r.text) == dict:
             print('[{}] {}'.format(r.text['id'], r.text['name']))
-        elif len(r.text) == 0:
+        elif r.text == {}:
             print('No result')
         elif type(r.text) == dict:
             print('Not a valid JSON')

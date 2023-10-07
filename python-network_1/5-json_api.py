@@ -17,10 +17,10 @@ if __name__ == "__main__":
         
         if r.text != {}:
             if type(r.text) == dict:
-                print('[{}] {}'.format(r.text['id'], r.text['name']))
+                print('[{}] {}'.format(r.text.get('id'), r.text.get('name')))
         elif r.text == {}:
             print('No result')
-        elif type(r.text) == dict:
+        elif type(r.text) != dict:
             print('Not a valid JSON')
 
         

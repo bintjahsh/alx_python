@@ -15,8 +15,9 @@ if __name__ == "__main__":
 
         r = requests.post(url, {'q': q})
         
-        if r.text != {} & type(r.text) == dict:
-            print('[{}] {}'.format(r.text['id'], r.text['name']))
+        if r.text != {}:
+            if type(r.text) == dict:
+                print('[{}] {}'.format(r.text['id'], r.text['name']))
         elif r.text == {}:
             print('No result')
         elif type(r.text) == dict:

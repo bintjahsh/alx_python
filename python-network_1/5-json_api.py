@@ -13,16 +13,32 @@ if __name__ == "__main__":
         else:
             q = sys.argv
 
-        r = requests.post(url, {'q': q})
-        # res = r.json()
-        
-        
-        if r.text == None:
-            print('No result') 
-        elif r.text != dict:
+        r = requests.get(url)
+
+        try:
+            res = r.json()
+            if res == {}:
+                print('No result')
+            else:
+                print('[{}] {}'.format(res['id'], res['name']))
+        except:
             print('Not a valid JSON')
-        else:
-            print('[{}] {}'.format(r.text.items['id'], r.text.items['name']))
             
 
+        # url = 'https://jsonplaceholder.org/posts/1'
+
+        # if sys.argv == None:
+        #     q = ""
+        # else:
+        #     q = sys.argv
+
+        # r = requests.get(url)
+        # try:
+        #     res = r.json()
+        #     if res == {}:
+        #         print('No result')
+        #     else:
+        #         print('[{}] {}'.format(res['id'], res['status']))
+        # except:
+        #     print('Not a valid JSON')
         

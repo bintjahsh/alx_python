@@ -6,6 +6,6 @@ import requests
 
 if __name__ == "__main__":
         url = sys.argv
-        email = sys.kwargs[0]
+        email = kwargs['email']
         r = requests.post(url, email)
         print(r.text)

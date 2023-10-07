@@ -19,7 +19,7 @@ if __name__ == "__main__":
         
         if res == None:
             print('No result') 
-        elif res == {}:
+        elif type(res) != dict:
             print('Not a valid JSON')
         else:
             print('[{}] {}'.format(res.get('id'), res.get('name')))

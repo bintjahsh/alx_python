@@ -14,15 +14,15 @@ if __name__ == "__main__":
             q = sys.argv
 
         r = requests.post(url, {'q': q})
-        res = r.json()
+        # res = r.json()
         
         
-        if r == None:
+        if r.text == None:
             print('No result') 
-        elif res != dict:
+        elif r.text != dict:
             print('Not a valid JSON')
         else:
-            print('[{}] {}'.format(res.items['id'], res.items['name']))
+            print('[{}] {}'.format(r.text.items['id'], r.text.items['name']))
             
 
         

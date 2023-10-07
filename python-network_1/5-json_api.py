@@ -11,7 +11,7 @@ if __name__ == "__main__":
         if sys.argv == None:
             q = ""
         else:
-            q = sys.argv
+            q = sys.argv[1]
 
         r = requests.post(url, {'q': q})
 

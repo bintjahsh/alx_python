@@ -16,7 +16,6 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     query = "SELECT * FROM states WHERE name = %s COLLATE utf8mb4_0900_as_cs ORDER BY states.id ASC"
-    
     cursor.execute(query, (state_search,))
     states = cursor.fetchall()
 

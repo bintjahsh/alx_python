@@ -15,16 +15,13 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT cities.name FROM cities WHERE cities.state_id= (SELECT states.id FROM states WHERE states.name=%s) ORDER BY cities.id ASC"
+    query = "SELECT name FROM cities WHERE state_id= (SELECT id FROM states WHERE name=%s) ORDER BY cities.id ASC"
     cursor.execute(query, (state_name,))
     cities = cursor.fetchall()
 
-    print(cities)
+    cities_list = []
 
-    # cities_list = ""
+    for city in cities:
+        cities_list.append(city)
 
-    # for city in cities:
-    #     if city != cities[-1]:
-    #         cities_list += (city, ",")
-    #     else:
-    #         cities_list += "{:s}".format(city)
+    print(cities_list)

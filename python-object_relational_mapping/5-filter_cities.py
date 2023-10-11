@@ -19,9 +19,10 @@ if __name__ == "__main__":
     cursor.execute(query, (state_name,))
     cities = cursor.fetchall()
 
-    cities_list = []
+    cities_list = ""
 
     for city in cities:
-        cities_list.append(city)
+        for i in city:
+            cities_list.append(city)
 
     print(cities_list)

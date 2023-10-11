@@ -18,4 +18,4 @@ if __name__ == "__main__":
     states = cursor.fetchall()
 
     for id, city, state in states:
-        print("({:s}, '{:s}', '{:s}')".format(id, city, state))
+        print("({:d}, '{:s}', '{:s}')".format(id, city, state))

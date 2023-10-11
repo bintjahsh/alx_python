@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
     for city in cities:
         if city != cities[-1]:
-            cities_list += "{:s},".format(city)
+            cities_list += (city, ",")
         else:
-            cities_list += "{:s}".format(city)
+            cities_list += (city)

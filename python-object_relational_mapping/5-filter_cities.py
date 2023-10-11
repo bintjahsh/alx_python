@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
     for city in cities:
         for i in city:
-            cities_list.append(city)
+            cities_list += i
 
     print(cities_list)

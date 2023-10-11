@@ -13,7 +13,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=My_User , passwd=My_Pass , db=My_DB)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'UPPER(N)%' ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' COLLATE utf8mb4_0900_as_cs ORDER BY states.id ASC")
 
     states_N = cursor.fetchall()
     for id, state in states_N:

@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM cities.name JOIN states ON cities.state_id=states.id WHERE states.name='{}' ORDER BY cities.id ASC"
+    query = "SELECT * FROM cities.name WHERE cities.states_id= (SELECT states.id FROM states WHERE states.name={}) ORDER BY cities.id ASC"
     cursor.execute(query, (state_name,))
     cities = cursor.fetchall()
 

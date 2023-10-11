@@ -19,13 +19,18 @@ if __name__ == "__main__":
     cursor.execute(query, (state_name,))
     cities = cursor.fetchall()
 
-    cities_list = ""
+    cities_list = []
 
     for city in cities:
         for i in city:
-            if i != i[-1]:
-                cities_list += i + ","
-            else:
-                cities_list += i 
+            cities_list.append(i)
 
-    print(cities_list)
+    cities_str = ""
+
+    for city in cities_list:
+        if city != cities_list[-1]:
+            cities_str += city + ','
+        else:
+            cities_str += city
+
+    print(cities_str)

@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT DISTINCT cities.name, cities.id, states.name FROM cities INNER JOIN states ON state_id ORDER BY cities.id ASC"
+    query = "SELECT DISTINCT cities.id, cities.name, states.name FROM cities INNER JOIN states ON state_id ORDER BY cities.id ASC"
     cursor.execute(query)
     states = cursor.fetchall()
 
     for id, city, state in states:
-        print("({:d}, '{:s}', '{:s}')".format(id, city, state))
+        print("({:s}, '{:s}', '{:s}')".format(id, city, state))

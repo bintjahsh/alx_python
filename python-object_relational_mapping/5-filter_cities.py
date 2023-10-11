@@ -23,6 +23,9 @@ if __name__ == "__main__":
 
     for city in cities:
         for i in city:
-            cities_list += i
+            if i != i[-1]:
+                cities_list += i + ","
+            else:
+                cities_list += i 
 
     print(cities_list)

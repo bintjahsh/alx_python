@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     for city in cities_list:
         if city != cities_list[-1]:
-            cities_str += city + ','
+            cities_str += city + ', '
         else:
             cities_str += city
 

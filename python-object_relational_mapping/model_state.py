@@ -1,12 +1,10 @@
 """This module is about Object-Relational Mapping.
-contains the class definition of a State and an
-instance Base = declarative_base()
+contains the class definition of a State which is an
+instance of superclass Base
 """
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
-    Base = declarative_base()
     class State(Base):
         """Creation of class State that inherits from Base and links to
         the MySQL table states.

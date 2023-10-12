@@ -14,4 +14,4 @@ if __name__ == "__main__":
     session = Session()
 
     for id, state in session.query(State.id, State.name).order_by(State.id):
-        print("{:d}: {:s}".format(State.id, State.name))
+        print("{}: {}".format(State.id, State.name))

@@ -14,7 +14,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     
     engine.connect()
-
+    
+    """A class state that inherits from Base and links to
+        the MySQL table states
+    """
     class State(Base):
         """A class state that inherits from Base and links to
         the MySQL table states

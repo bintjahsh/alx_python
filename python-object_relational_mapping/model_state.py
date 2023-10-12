@@ -1,8 +1,4 @@
-"""This module is about Object-Relational Mapping.
-contains the class definition of a State and an
-instance Base = declarative_base()
-"""
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 class State(Base):
     """Creation of class State that inherits from Base and links to
     the MySQL table states. State has the following attributes:

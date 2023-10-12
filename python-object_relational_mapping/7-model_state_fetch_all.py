@@ -10,6 +10,5 @@ from model_state import Base, State
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]))
 Session = sessionmaker(bind=engine)
 
-for id, state in Session.query(State.id, State.name).order_by(State.id):
-    print("{:d}: {:s}".format(id, state))
-
+for instance in Session.query(State.id, State.name).order_by(State.id):
+    print("{:d}: {:s}".format(State.id, State.name))

@@ -2,15 +2,14 @@
 contains the class definition of a State and an
 instance Base = declarative_base()
 """
-import sys
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
     Base = declarative_base()
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]),)
+    # engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]),)
     
-    engine.connect()
+    # engine.connect()
     
     """A class State that inherits from Base and links to
     the MySQL table states
@@ -27,4 +26,4 @@ if __name__ == "__main__":
         id = Column(Integer, unique=True, nullable=False, autoincrement=True, primary_key=True)
         name = Column(String(128), nullable=False)
 
-    Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)

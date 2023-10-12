@@ -1,4 +1,4 @@
-""" This module is about Object-Relational Mapping.
+"""This module is about Object-Relational Mapping.
 contains the class definition of a State and an
 instance Base = declarative_base()
 """
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     engine.connect()
     
     """A class State that inherits from Base and links to
-        the MySQL table states
+    the MySQL table states
     """
     class State(Base):
         """Creation of class State that inherits from Base and links to

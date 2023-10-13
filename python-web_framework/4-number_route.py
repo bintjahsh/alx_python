@@ -1,8 +1,7 @@
-""" This module creates a script that starts a Flask
+"""This module creates a script that starts a Flask
 web application that creates five routes including
-one that must be an integer n
+one that must receive a variable, an integer n
 """
-
 from flask import Flask
 
 app = Flask(__name__)

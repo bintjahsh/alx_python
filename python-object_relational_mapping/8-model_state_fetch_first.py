@@ -13,9 +13,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     query = session.query(State.id, State.name).order_by(State.id)
-
-    if len(query) != 0:
-        for id, state in query.first():
-            print("{}: {}".format(id, state))
-    else:
-        print("Nothing\n")
+    print(query.first())
+    # if len(query) != 0:
+    #     for id, state in query.first():
+    #         print("{}: {}".format(id, state))
+    # else:
+    #     print("Nothing\n")

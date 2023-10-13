@@ -16,5 +16,5 @@ if __name__ == "__main__":
     result = query.all()
     print(result)
     for res in result:
-        for id, state in res:
-            print("{:d}: {:s}".format(id, state))
+        for state in res:
+            print("{:d}: {:s}".format(res[0], res[1]))

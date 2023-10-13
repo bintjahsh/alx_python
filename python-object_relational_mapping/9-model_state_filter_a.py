@@ -17,4 +17,4 @@ if __name__ == "__main__":
     print(result)
     for res in result:
         for id, state in res:
-            print("{}: {}".format(id, state))
+            print("{:d}: {:s}".format(id, state))

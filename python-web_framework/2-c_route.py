@@ -17,7 +17,7 @@ def second_hello():
 
 @app.route('/c/<text>')
 def show_c(text):
-    return ("C {}".format(text))
+    return ("C {}".format(text).replace('_', ' '))
 
 if __name__ == '__main__':
     app.run()

@@ -10,3 +10,6 @@ app.url_map.strict_slashes = False
 @app.route('/')
 def hello():
     return "<p>Hello HBNB!</p>"
+
+if __name__ == '__main__':
+    app.run()

@@ -19,12 +19,9 @@ def second_hello():
 def show_c(text):
     return ("C {}".format(text).replace('_', ' '))
 
-@app.route('/python/<text>')
+@app.route('/python/<text>', defaults={'<text>': 'is_cool'})
 def show_python(text):
     return ("Python {}".format(text).replace('_', ' '))
-
-with app.test_request_context():
-    print(url_for('show_python', text='is cool'))
 
 if __name__ == '__main__':
     app.run()

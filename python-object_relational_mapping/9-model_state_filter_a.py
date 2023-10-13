@@ -14,7 +14,7 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State.id, State.name).filter(State.name.like("%a%")).order_by(State.id)
     result = query.all()
-
+    print(result)
     for res in result:
         for id, state in res:
             print("{}: {}".format(id, state))

@@ -14,7 +14,8 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State.id, State.name).order_by(State.id)
     first = query.first()
-    if first == ():
+    
+    if session.query(State).all() == ():
         print("Nothing\n")
     else:
         print("{}: {}".format(first[0], first[1]))

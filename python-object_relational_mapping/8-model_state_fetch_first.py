@@ -15,7 +15,7 @@ if __name__ == "__main__":
     query = session.query(State.id, State.name).order_by(State.id)
     first = query.first()
     
-    if first == ():
+    if session.query(State).count() == 0:
         print("Nothing")
     else:
         print("{}: {}".format(first[0], first[1]))

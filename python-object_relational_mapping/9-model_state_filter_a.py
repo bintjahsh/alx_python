@@ -14,5 +14,6 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State.id, State.name).filter(State.name.like("%a%")).order_by(State.id)
     res = query.all()
+    
     for state in res:
-        print("{:d}: {:s}".format(res[0], res[1]))
+        print("{:d}: {:s}".format(state[0], state[1]))

@@ -12,7 +12,7 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    query = session.query(State.name).order_by(State.id)
+    query = session.query(State.name).filter(State.name.like('%a%')).order_by(State.id)
 
-    for id, state in query.filter(State.name.like('%a%')).all():
+    for id, state in query.all():
         print("{}: {}".format(id, state))

@@ -1,5 +1,6 @@
 """ This module creates a script that starts a Flask
-web application
+web application that creates five routes including
+one that must be an integer n
 """
 
 from flask import Flask

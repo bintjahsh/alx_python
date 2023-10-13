@@ -25,5 +25,9 @@ def show_c(text):
 def show_python(text):
     return ("Python {}".format(text).replace('_', ' '))
 
+@app.route('/number/<int:n>')
+def show_python(n):
+    return ("{} is a number".format(n))
+
 if __name__ == '__main__':
     app.run(port=5000)

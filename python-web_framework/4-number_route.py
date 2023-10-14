@@ -33,3 +33,5 @@ def show_python(text):
 def show_python(n):
     return ("{} is a number".format(n))
 
+if __name__ == '__main__':
+    app.run(port=5000)

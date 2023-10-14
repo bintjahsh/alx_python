@@ -8,8 +8,6 @@ from flask import Flask
 """This module creates a script that starts a Flask
 web application
 """
-
-
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
@@ -35,5 +33,3 @@ def show_python(text):
 def show_python(n):
     return ("{} is a number".format(n))
 
-if __name__ == '__main__':
-    app.run()

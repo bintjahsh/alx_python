@@ -45,7 +45,6 @@ def show_python(text):
 def show_num(n):
     return "{} is a number".format(n)
 
-@app.route("/number_template/", strict_slashes=False)
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def display_page(n):
     return render_template('5-number.html', name=n)

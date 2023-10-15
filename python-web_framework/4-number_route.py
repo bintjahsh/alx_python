@@ -1,37 +1,50 @@
-"""This module creates a script that starts a Flask
-web application that creates five routes including
-one that must receive a variable, an integer n
-"""
-
+''' A modue that creates a script that starts a
+flask web application
+'''
+# import modules
 from flask import Flask
 
-"""This module creates a script that starts a Flask
-web application
-"""
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def hello():
-    return ("Hello HBNB!")
+    '''hello function:
+    returns Hello HBNB!
+    '''
+    return ('Hello HBNB!')
+
 
 @app.route('/hbnb', strict_slashes=False)
 def second_hello():
-    return ("HBNB")
+    '''
+    hbnb function:
+        returns HBNB
+    '''
+    return ('HBNB')
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def show_c(text):
-    return ("C {}".format(text).replace('_', ' '))
+    new_text = text.replace('_', ' ')
+    return ('C {}'.format(new_text))
 
-@app.route('/python/', defaults={'text': 'is_cool'})
+
+@app.route('/python', strict_slashes=False)
+def show_python():
+    return ('Python is cool')
+
 
 @app.route('/python/<text>', strict_slashes=False)
 def show_python(text):
-    return ("Python {}".format(text).replace('_', ' '))
+    new_text = text.replace('_', ' ')
+    return ('Python {}'.format(new_text))
 
-@app.route('/number/<int:n>', strict_slashes=False)
-def show_python(n):
+
+@app.route("/number/<int:n>", strict_slashes=False)
+def num(n):
     return ("{} is a number".format(n))
 
+
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(host='0.0.0.0', port='5000')

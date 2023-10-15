@@ -67,7 +67,7 @@ def hello():
 
 
 @app.route('/hbnb', strict_slashes=False)
-def hbnb():
+def second_hello():
     '''
     hbnb function:
         returns HBNB
@@ -76,7 +76,7 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def name(text):
+def show_c(text):
     new_text = text.replace('_', ' ')
     return 'C {}'.format(new_text)
 
@@ -87,13 +87,13 @@ def default():
 
 
 @app.route('/python/<text>', strict_slashes=False)
-def magic(text):
+def show_python(text):
     new_text = text.replace('_', ' ')
     return 'Python {}'.format(new_text)
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def num(n):
+def show_num(n):
     return "{} is a number".format(n)
 
 

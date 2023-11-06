@@ -1,46 +1,41 @@
+import json
 import requests
 import sys
-import json
-"""
-Module Name: requests, json, sys
-Description: This module provides functions for network call, command line argument and writing json files
-"""
 
-if len(sys.argv) != 2:
-    sys.exit(1)
+def getEmployeeTodo(id):
+    url = f"https://jsonplaceholder.typicode.com/users/{id}/todos"
+    res = requests.get(url)
+    todos = res.json()
 
-employee_id = int(sys.argv[1])
+    url = f"https://jsonplaceholder.typicode.com/users/{id}"
+    res = requests.get(url)
+    employee = res.json()
 
-employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    completed_tasks = len([todo for todo in todos if todo['completed']])
+    all_tasks = len(todos)
 
-employee_response = requests.get(employee_url)
-todos_response = requests.get(todos_url)
+    # Print progress report
+    print(f"Employee {employee['name']} is done with tasks({completed_tasks}/{all_tasks}):")
+    for todo in todos:
+        if todo['completed']:
+            print(f'\t{todo["title"]}')
 
-if employee_response.status_code != 200 or todos_response.status_code != 200:
-    sys.exit(1)
+    data = {str(id): []}
+    for todo in todos:
+        data[str(id)].append({
+            'task': todo['title'],
+            'completed': todo['completed'],
+            'username': employee['name']
+        })
 
-employee_data = employee_response.json()
-todo_data = todos_response.json()
-employee_name = employee_data.get("name", "unknown employee")
-employee_username = employee_data.get("username", "unknown employee")
-
-json_filename = f"{employee_id}.json"
-
-
-tasks_list = []
-
-for task in todo_data:
-    task_data = {
-        "task": task["title"],
-        "completed": task["completed"],
-        "username": employee_username
-    }
-    tasks_list.append(task_data)
+    with open(f'{id}.json', 'w') as jsonfile:
+        json.dump(data, jsonfile)
 
 
-user_data = {f"USER_ID {employee_id}": tasks_list}
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print(f"what is the id: {sys.argv[0]} EMPLOYEE_ID")
+        sys.exit(1)
 
-
-with open(json_filename, mode="w") as json_file:
-    json.dump(user_data, json_file, indent=4)
+    id = sys.argv[1]
+    getEmployeeTodo(id)

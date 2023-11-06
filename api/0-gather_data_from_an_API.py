@@ -3,31 +3,29 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    emplooye_id = sys.argv[1]
-    api_request = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(emplooye_id))
-    api_request1 = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(emplooye_id))
-    data = api_request.text
-    pjson = json.loads(data)
-    data1 = api_request1.text
-    pjson1 = json.loads(data1)
+    employee_id = sys.argv[1]
+    employee = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(employee_id))
+    employee_tasks = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id))
+    data1 = employee.text
+    pjson = json.loads(data1)
+    data2 = employee_tasks.text
+    pjson1 = json.loads(data2)
 
-    title_count = 0
-    title_complete = 0
-    name_info = pjson['name']
+    task_count = 0
+    task_complete = 0
+    employee_name = pjson['name']
 
-# count the todo list and completed or not
+    for item in pjson1:
+        # Count the tasks in todo list and check if completed or not
+        if 'title' in item:
+            task_count += 1 
+        if (item['completed'] == True):
+            task_complete += 1
 
-    for itemss in pjson1:
-        if 'title' in itemss:
-            title_count += 1 
-        if (itemss['completed'] == True):
-            title_complete += 1
+    print("Employee {} is done with tasks({}/{}):".format(employee_name, task_complete, task_count))
 
-    print("Employee {} is done with tasks({}/{}):".format(name_info, title_complete, title_count))
-
-# print all completed titles 
-
-    for items in pjson1:
-        if (items['completed'] == True):
-            tasks_name = items['title']
+    for item in pjson1:
+        # Print all completed tasks
+        if (item['completed'] == True):
+            tasks_name = item['title']
             print("\t {}".format(tasks_name))

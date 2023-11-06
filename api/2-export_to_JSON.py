@@ -1,16 +1,15 @@
+import requests
+import sys
+import json
 """
 Module Name: requests, json, sys
 Description: This module provides functions for network call, command line argument and writing json files
 """
 
-import json
-import requests
-import sys
-
+if len(sys.argv) != 2:
+    sys.exit(1)
 
 employee_id = int(sys.argv[1])
-
- # Make a request to the API to get the user's tasks
 
 employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
 todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
@@ -45,6 +44,3 @@ user_data = {f"USER_ID {employee_id}": tasks_list}
 
 with open(json_filename, mode="w") as json_file:
     json.dump(user_data, json_file, indent=4)
-
-if len(sys.argv) != 2:
-    sys.exit(1)

@@ -26,9 +26,9 @@ for task in todo_data:
         number_of_done_tasks += 1
     total_number_of_tasks += 1
 
-
-print(f"Employee {employee_name} is done with tasks ({number_of_done_tasks}/{total_number_of_tasks})")
+print("Employee {} is done with tasks({}/{}):".format(employee_name, number_of_done_tasks, total_number_of_tasks))
 
 
 for task in todo_data:
-    print(f"\t{task['title']}")
+    if (task['completed'] == True):
+        print("\t {}".format(task['title']))

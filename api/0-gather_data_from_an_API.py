@@ -1,31 +1,34 @@
-import json
 import requests
 import sys
 
-if __name__ == "__main__":
-    employee_id = sys.argv[1]
-    employee = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(employee_id))
-    employee_tasks = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id))
-    data1 = employee.text
-    pjson = json.loads(data1)
-    data2 = employee_tasks.text
-    pjson1 = json.loads(data2)
+if len(sys.argv) != 2:
+    sys.exit(1)
 
-    task_count = 0
-    task_complete = 0
-    employee_name = pjson['name']
+employee_id = int(sys.argv[1])
 
-    for item in pjson1:
-        # Count the tasks in todo list and check if completed or not
-        if 'title' in item:
-            task_count += 1 
-        if (item['completed'] == True):
-            task_complete += 1
+employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
 
-    print("Employee {} is done with tasks({}/{}):".format(employee_name, task_complete, task_count))
+employee_response = requests.get(employee_url)
+todos_response = requests.get(todos_url)
 
-    for item in pjson1:
-        # Print all completed tasks
-        if (item['completed'] == True):
-            tasks_name = item['title']
-            print("\t {}".format(tasks_name))
+if employee_response.status_code != 200 or todos_response.status_code != 200:
+    sys.exit(1)
+
+employee_data = employee_response.json()
+todo_data = todos_response.json()
+employee_name = employee_data.get("name", "anonymous employee")
+
+number_of_done_tasks = 0
+total_number_of_tasks = 0
+for task in todo_data:
+    if task["completed"]:
+        number_of_done_tasks += 1
+    total_number_of_tasks += 1
+
+
+print(f"Employee {employee_name} is done with tasks ({number_of_done_tasks}/{total_number_of_tasks})")
+
+
+for task in todo_data:
+    print(f"\t{task['title']}")

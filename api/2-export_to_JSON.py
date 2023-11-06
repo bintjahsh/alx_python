@@ -1,37 +1,46 @@
-import json
 import requests
 import sys
+import json
+"""
+Module Name: requests, json, sys
+Description: This module provides functions for network call, command line argument and writing json files
+"""
 
-def user_info(user_id):
-    # Make a request to the API to get the user's tasks
-    url = f'https://jsonplaceholder.typicode.com/todos?userId={user_id}'
-    response = requests.get(url)
-
-    if response.status_code != 200:
-        print(f'Error: Request failed with status code {response.status_code}')
-        sys.exit(1)
-
-    tasks = response.json()
-
-    # Create a JSON file with the specified format
-    json_file = f'{user_id}.json'
-
-    data = {str(user_id): []}
-    for task in tasks:
-        data[str(user_id)].append({
-            "task": task['title'],
-            "completed": task['completed'],
-            "username": "Antonette"  
-        })
-
-    with open(json_file, 'w') as jsonfile:
-        json.dump(data, jsonfile, indent=2)
-
-    print(f'Tasks have been exported to {json_file}')
-
-if len(sys.argv) < 2:
-    print('Please provide the user ID as an argument.')
+if len(sys.argv) != 2:
     sys.exit(1)
 
-user_id = int(sys.argv[1])
-user_info(user_id)
+employee_id = int(sys.argv[1])
+
+employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+
+employee_response = requests.get(employee_url)
+todos_response = requests.get(todos_url)
+
+if employee_response.status_code != 200 or todos_response.status_code != 200:
+    sys.exit(1)
+
+employee_data = employee_response.json()
+todo_data = todos_response.json()
+employee_name = employee_data.get("name", "unknown employee")
+employee_username = employee_data.get("username", "unknown employee")
+
+json_filename = f"{employee_id}.json"
+
+
+tasks_list = []
+
+for task in todo_data:
+    task_data = {
+        "task": task["title"],
+        "completed": task["completed"],
+        "username": employee_username
+    }
+    tasks_list.append(task_data)
+
+
+user_data = {f"USER_ID {employee_id}": tasks_list}
+
+
+with open(json_filename, mode="w") as json_file:
+    json.dump(user_data, json_file, indent=4)

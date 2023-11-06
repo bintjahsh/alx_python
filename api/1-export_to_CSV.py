@@ -2,31 +2,36 @@ import csv
 import requests
 import sys
 
-if len(sys.argv) < 2:
-    print('Please provide the user ID as an argument.')
+if len(sys.argv) != 2:
     sys.exit(1)
 
-user_id = sys.argv[1]
+employee_id = int(sys.argv[1])
 
-# Make a request to the API to get the user's tasks
-url = f'https://jsonplaceholder.typicode.com/todos?userId={user_id}'
-response = requests.get(url)
+employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
 
-if response.status_code != 200:
-    print(f'Error: Request failed with status code {response.status_code}')
+employee_response = requests.get(employee_url)
+todos_response = requests.get(todos_url)
+
+if employee_response.status_code != 200 or todos_response.status_code != 200:
     sys.exit(1)
 
-tasks = response.json()
+employee_data = employee_response.json()
+todo_data = todos_response.json()
+employee_name = employee_data.get("name", "unknown employee")
+employee_username = employee_data.get("username", "unkown employee")
 
-# Create a CSV file with the specified format
-csv_file = f'{user_id}.csv'
+csv_filename = f"{employee_id}.csv"
 
-with open(csv_file, mode='w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
+with open(csv_filename, mode="w", newline="") as csv_file:
+    csv_writer = csv.writer(csv_file)
 
-    for task in tasks:
-    
-        writer.writerow([user_id, 'Antonette', str(task['completed']), task['title']])
+    csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
 
-print(f'Tasks have been exported to {csv_file}')
+for task in todo_data:
+        task_completed_status = "Completed" if task["completed"] else "Not Completed"
+        csv_writer.writerow([employee_id, employee_username, task_completed_status, task["title"]])
+
+
+with open(csv_filename, 'r') as f:
+     pass
